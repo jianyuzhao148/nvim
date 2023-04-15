@@ -64,7 +64,7 @@ local plugins={
 	{
 		'williamboman/mason.nvim',
 		config=function()
-			require("conf.lsp")
+			require("conf.mason")
 		end,
 		dependencies={
 			'williamboman/mason-lspconfig.nvim',
