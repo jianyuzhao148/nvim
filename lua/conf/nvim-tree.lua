@@ -15,6 +15,7 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
 vim.api.nvim_create_autocmd("BufEnter", {
   nested = true,
   callback = function()
@@ -24,7 +25,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end
 })
 local function open_nvim_tree()
+  -- open the tree
   require("nvim-tree.api").tree.open()
 end
-
 open_nvim_tree()

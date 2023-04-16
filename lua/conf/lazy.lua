@@ -38,7 +38,7 @@ local plugins={
 		'nvim-tree/nvim-tree.lua',
 		config=function()
 			require("conf.nvim-tree")
-		end
+		end,
 	},
 	{
 		'nvim-treesitter/nvim-treesitter',
@@ -57,6 +57,7 @@ local plugins={
 	},
 	{
 		'simrat39/symbols-outline.nvim',
+		event = "LspAttach",
 		config=function()
 			require("symbols-outline").setup()
 		end
@@ -87,13 +88,12 @@ local plugins={
 		"glepnir/lspsaga.nvim",
 		event = "LspAttach",
 		config = function()
-			require("lspsaga").setup({})
+			require("conf.lspsaga")
 		end,
 	},
 	{
-		'junegunn/fzf',
-		run = 'fzf#install()',
-		dependencies='junegunn/fzf.vim',
+		'junegunn/fzf.vim',
+		dependencies='junegunn/fzf',
 	},
 }
 
