@@ -27,9 +27,10 @@ local plugins={
 			require("conf.lualine")
 		end
 	},
-	{
+    {
 		'akinsho/bufferline.nvim',
-		version = "v3.*",
+	 	version = "*",
+		dependencies = {'nvim-tree/nvim-web-devicons'},
 		config=function()
 			require("conf.bufferline")
 		end
@@ -41,26 +42,9 @@ local plugins={
 		end,
 	},
 	{
-		'nvim-treesitter/nvim-treesitter',
-		build = ":TSUpdate"
-	},
-	{
-		'lewis6991/gitsigns.nvim',
-		config = function()
-			require("conf.gitsigns")
-		end
-	},
-	{	'numToStr/Comment.nvim',
-		config=function()
-			require("conf.comment")
-		end
-	},
-	{
-		'simrat39/symbols-outline.nvim',
-		event = "LspAttach",
-		config=function()
-			require("symbols-outline").setup()
-		end
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.1',
+		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	{
 		'williamboman/mason.nvim',
@@ -73,6 +57,21 @@ local plugins={
 		}
 	},
 	{
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require("conf.gitsigns")
+		end
+	},
+	{
+		'nvim-treesitter/nvim-treesitter',
+		build = ":TSUpdate"
+	},
+	{	'numToStr/Comment.nvim',
+		config=function()
+			require("conf.comment")
+		end
+	},
+	{
 		'hrsh7th/nvim-cmp',
 		config=function()
 			require("conf.nvim-cmp")
@@ -82,19 +81,26 @@ local plugins={
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-cmdline',
+			'hrsh7th/cmp-vsnip',
+			'hrsh7th/vim-vsnip'
 		}
 	},
-	{
-		"glepnir/lspsaga.nvim",
-		event = "LspAttach",
+    {
+        'sbdchd/neoformat',
+        event="LspAttach",
+        config=function()
+            require("conf.neoformat")
+        end,
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies={
+            'mfussenegger/nvim-dap',
+        },
 		config = function()
-			require("conf.lspsaga")
-		end,
-	},
-	{
-		'junegunn/fzf.vim',
-		dependencies='junegunn/fzf',
-	},
+			require("conf.nvim-dap")
+        end
+    }
 }
 
 require("lazy").setup(plugins)

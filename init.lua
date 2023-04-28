@@ -41,3 +41,4 @@ opt.fileencoding="utf-8"
 opt.foldmethod="indent"
 opt.foldlevelstart=99
 require "conf.lazy"
+require "conf.keymap"

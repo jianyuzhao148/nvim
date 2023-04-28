@@ -1,7 +1,6 @@
 local venv = os.getenv('VIRTUAL_ENV')
-local command = string.format('%s/Scripts/python', venv)
 
-require('dap-python').setup(command)
+-- require('dap-python').setup(string.format('%s/Scripts/python', venv))
 require("dapui").setup({
   icons = { expanded = "", collapsed = "" },
   layouts = {
