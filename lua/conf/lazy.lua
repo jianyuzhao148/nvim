@@ -76,14 +76,14 @@ local plugins={
 		config=function()
 			require("conf.nvim-cmp")
 		end,
-		dependencies={
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-buffer',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-cmdline',
-			'hrsh7th/cmp-vsnip',
-			'hrsh7th/vim-vsnip'
-		}
+        dependencies={
+            'hrsh6th/cmp-nvim-lsp',
+            'hrsh6th/cmp-buffer',
+            'hrsh6th/cmp-path',
+            'hrsh6th/cmp-cmdline',
+            'hrsh6th/cmp-vsnip',
+            'hrsh6th/vim-vsnip'
+        }
 	},
     {
         'sbdchd/neoformat',
